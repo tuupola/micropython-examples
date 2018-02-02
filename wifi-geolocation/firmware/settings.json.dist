@@ -1,7 +1,5 @@
 {
-    "wifi": {
-        "username": "",
-        "password": ""
-    },
+    "username": "",
+    "password": "",
     "api_key": ""
 }
