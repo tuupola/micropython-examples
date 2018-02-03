@@ -8,6 +8,7 @@
 #   https://github.com/tuupola/micropython-examples
 
 from machine import Pin # pylint: disable=import-error
+from input import DigitalInput # pylint: disable=import-error
 from map import Map # pylint: disable=import-error
 from wifi import Wifi # pylint: disable=import-error
 from geolocation import Geolocation # pylint: disable=import-error
@@ -40,6 +41,28 @@ def main():
     map = Map(coordinates)
     map.save("/flash/map.jpg")
 
+    tft.image(0, 0, "/flash/map.jpg")
+
+    button_a = DigitalInput(
+        Pin(m5stack.BUTTON_A_PIN, Pin.IN),
+        callback = lambda pin: zoom_in_handler(map, tft)
+    )
+
+    button_c = DigitalInput(
+        Pin(m5stack.BUTTON_C_PIN, Pin.IN),
+        callback=lambda pin: zoom_out_handler(map, tft)
+    )
+
+def zoom_in_handler(map, tft):
+    map.zoom_in()
+    map.save("/flash/map.jpg")
+    print(map.zoom)
+    tft.image(0, 0, "/flash/map.jpg")
+
+def zoom_out_handler(map, tft):
+    map.zoom_out()
+    map.save("/flash/map.jpg")
+    print(map.zoom)
     tft.image(0, 0, "/flash/map.jpg")
 
 if __name__ == "__main__":
