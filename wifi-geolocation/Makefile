@@ -28,6 +28,7 @@ reset:
 
 deps:
 	#micropython -m upip install -p firmware/lib/ micropython-urllib.parse
-	# curl https://raw.githubusercontent.com/micropython-IMU/micropython-fusion/master/fusion.py -o firmware/lib/fusion.py
+	curl https://raw.githubusercontent.com/tuupola/micropython-m5stack/master/firmware/lib/input.py -o firmware/lib/input.py
+	curl https://raw.githubusercontent.com/tuupola/micropython-m5stack/master/firmware/lib/m5stack.py -o firmware/lib/m5stack.py
 
 .PHONY: help watch shell repl reset sync deps
