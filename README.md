@@ -1,5 +1,9 @@
 # MicroPython experiments
 
+## Heading, Pitch and Roll With MPU-9250
+
+Read an I2C 9DOF sensor using an timer. Prints out heading, pitch and roll on TFT display. Uses [MPU-9250 I2C driver](https://github.com/tuupola/micropython-mpu9250) and [sensor fusion](https://github.com/micropython-IMU/micropython-fusion) for heading,  pitch and roll calculations.
+
 ## Quectel GNSS L76-L and MicropyGPS
 
 Reads an I2C GPS receiver using an timer. Prints out current coordinates and speed. Uses [Quectel GNSS L76-L I2C](https://github.com/tuupola/micropython-gnssl76l) and [micropyGPS](https://github.com/inmcm/micropyGPS) for parsin NMEA sentences.
